@@ -13,7 +13,7 @@
 
 
 
-    <!--通过构造器注入-->
+    <!--通过构造器注入  引用-->
     <bean id="AAKnight" class="test_first_di.AAKnight">
         <!--<constructor-arg ref="apple"/>-->
         <constructor-arg ref="bnanana"/>
@@ -23,10 +23,49 @@
     <bean id="bnanana" class="test_first_di.QuestImpl_Banana"></bean>
 
 
+    <!--通过构造器注入  常量-->
+    <bean id="Knight_02" class="test_first_di.AAKnight">
+        <!--<constructor-arg ref="apple"/>-->
+        <constructor-arg value="kkp"/>
+    </bean>
 
 
-    <!--<context:component-scan base-package="test_aop" />-->
+    <!--通过构造器注入  集合-->
+    <bean id="Knight_03" class="test_first_di.AAKnight">
+        <!--<constructor-arg ref="apple"/>-->
+        <constructor-arg>
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+                <value>f</value>
 
+                <!--集合中可以用ref代替value 注入对象-->
+                <!--<ref bean=""></ref>-->
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <!--属性注入 常量-->
+    <bean id="Knight_04" class="test_first_di.AAKnight">
+        <property name="age" value="25"></property>
+    </bean>
+
+    <!--属性注入 列表-->
+    <bean id="Knight_05" class="test_first_di.AAKnight">
+        <property name="friend">
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>ad</value>
+                <value>ac</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <context:component-scan base-package="test_first_di"></context:component-scan>
 
 
 </beans>

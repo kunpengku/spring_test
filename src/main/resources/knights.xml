@@ -31,7 +31,7 @@
         </aop:aspect>
     </aop:config>
 
-    <!--<context:component-scan base-package="test_aop" />-->
+    <context:component-scan base-package="test_aop" />
 
 
 
